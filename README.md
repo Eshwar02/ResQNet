@@ -1,8 +1,9 @@
 # ResQNet
 
-**Emergency Response Mobile Application** | Built with Flutter
+**"Because every second matters."**
 
-ResQNet is a life-saving mobile application that connects users with ambulances, hospitals, and emergency contacts during medical crises. Featuring real-time ambulance tracking, GPS-based hospital discovery, and one-tap SOS activation, ResQNet ensures help is always within reach.
+ResQNet is a smart emergency response network designed to connect people, ambulances, and hospitals in real time.
+With one-tap SOS activation, live ambulance tracking, and instant access to nearby medical facilities, ResQNet ensures help is always within reach when every second counts.
 
 ---
 
