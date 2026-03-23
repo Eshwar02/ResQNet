@@ -110,6 +110,7 @@ class _LiveNavigationScreenState extends State<LiveNavigationScreen>
                 urlTemplate:
                     'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
                 userAgentPackageName: 'com.resqnet.app',
+                tileProvider: NetworkTileProvider(),
               ),
               MarkerLayer(
                 markers: [

@@ -68,6 +68,7 @@ class _MapScreenState extends State<MapScreen> {
                 urlTemplate:
                     'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
                 userAgentPackageName: 'com.resqnet.app',
+                tileProvider: NetworkTileProvider(),
               ),
               MarkerLayer(
                 markers: [

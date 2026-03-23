@@ -68,6 +68,10 @@ class _AmbulanceStatusScreenState extends State<AmbulanceStatusScreen>
       AppConfig.defaultLongitude,
     );
 
+    // Initialize ambulance location to user location until tracking sets it
+    _ambulanceLocation = _userLocation;
+    _hospitalLocation = _userLocation;
+
     _initializeTracking();
   }
 
@@ -257,6 +261,7 @@ class _AmbulanceStatusScreenState extends State<AmbulanceStatusScreen>
                 TileLayer(
                   urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
                   userAgentPackageName: 'com.resqnet.app',
+                  tileProvider: NetworkTileProvider(),
                 ),
                 // Route polyline
                 PolylineLayer(
