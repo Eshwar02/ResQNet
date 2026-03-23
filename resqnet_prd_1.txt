@@ -1,0 +1,174 @@
+🚑 RESQNET — FULL WORKFLOW (PHASE-WISE)
+
+👉 Frontend + Backend combined execution
+
+⏱️ TOTAL TIME: 5 HOURS
+
+👉 Strategy: Build → Connect → Show → Polish
+
+🚀 PHASE 1 — PROJECT SETUP (30 mins)
+🎯 Goal:
+
+Get everything running
+
+🧩 Tasks:
+📱 Flutter:
+Create project
+
+Install packages:
+
+flutter pub add http flutter_map geolocator url_launcher connectivity_plus
+⚙️ Node.js:
+npm init -y
+npm install express cors
+🧠 Output:
+Flutter runs ✅
+Backend server runs ✅
+⚡ PHASE 2 — BASIC UI (45 mins)
+🎯 Goal:
+
+Create main screens
+
+📱 Build:
+🏠 Home Screen
+Emergency button 🚨
+Call 108 📞
+Contacts button
+👨‍👩‍👦 Contacts Screen
+🏥 Hospital List Screen (empty for now)
+🗺️ Map Screen (empty)
+🧠 Output:
+
+👉 Navigation working
+
+🔥 PHASE 3 — BACKEND CORE (1 hr)
+🎯 Goal:
+
+Make APIs ready
+
+⚙️ Create APIs:
+1. /hospitals
+Return static hospital list
+2. /emergency
+Store request
+3. /nearest-hospitals
+Sort based on location
+🧠 Output:
+
+👉 Backend ready to send data
+
+🔗 PHASE 4 — CONNECT FRONTEND + BACKEND (45 mins)
+🎯 Goal:
+
+Make app functional
+
+📱 Tasks:
+Call /hospitals
+Display list
+Call /emergency on button click
+🧠 Output:
+
+👉 Data flows properly
+
+📍 PHASE 5 — LOCATION + EMERGENCY FLOW (45 mins)
+🎯 Goal:
+
+Real emergency simulation
+
+📱 Tasks:
+Get user location
+Send location to backend
+
+Show loading screen:
+
+“Finding help…”
+
+🧠 Output:
+
+👉 Emergency flow works 🚨
+
+🗺️ PHASE 6 — MAP + MARKERS (45 mins)
+🎯 Goal:
+
+Visual impact
+
+📱 Tasks:
+Show OSM map
+Add markers:
+User 📍
+Hospital 🏥
+🧠 Output:
+
+👉 Map working
+
+🚑 PHASE 7 — AMBULANCE SIMULATION (30 mins)
+🎯 Goal:
+
+WOW factor 💥
+
+📱 Tasks:
+Add ambulance marker
+Move using timer
+Every 2 sec → update position
+🧠 Output:
+
+👉 Moving ambulance 🚑
+
+📞 PHASE 8 — CALL + OFFLINE (20 mins)
+🎯 Goal:
+
+Safety feature
+
+📱 Tasks:
+Call 108
+Call contacts
+Detect no internet
+🧠 Output:
+
+👉 Works even without net
+
+🎭 PHASE 9 — POLISH + DEMO FLOW (30 mins)
+🎯 Goal:
+
+Make it look professional
+
+Add:
+Status text:
+“Control room notified”
+“Ambulance assigned”
+“Arriving…”
+Small animations
+Clean UI spacing
+🧠 Output:
+
+👉 Demo-ready app 💯
+
+🧩 FINAL FLOW (WHAT YOU SHOW)
+Open app
+→ Tap Emergency 🚨
+→ Fetch location
+→ Show “Finding help…”
+→ Show hospitals
+→ Open map
+→ Ambulance moves 🚑
+→ User can call anytime 📞
+⚠️ IF TIME RUNS OUT (IMPORTANT)
+
+👉 Priority:
+
+🚨 Emergency button
+📞 Call feature
+🏥 Hospital list
+🗺️ Map
+🚑 Animation
+🧠 MENTAL MODEL
+
+👉 Don’t think “build app”
+👉 Think:
+
+“Simulate emergency experience”
+
+💬 FINAL ADVICE
+Keep everything simple
+Make everything work
+Make it look real

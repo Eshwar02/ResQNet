@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nearby Helpers - ResQNet</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-high": "#e7e8e9",
+              "on-surface-variant": "#603e39",
+              "primary": "#bc0100",
+              "surface-container": "#edeeef",
+              "on-primary": "#ffffff",
+              "on-secondary-fixed": "#0f1d25",
+              "surface-variant": "#e1e3e4",
+              "on-primary-container": "#fffbff",
+              "primary-fixed-dim": "#ffb4a8",
+              "on-tertiary-container": "#fefcff",
+              "secondary-container": "#d3e2ed",
+              "on-tertiary": "#ffffff",
+              "on-error-container": "#93000a",
+              "on-background": "#191c1d",
+              "error": "#ba1a1a",
+              "outline": "#956d67",
+              "tertiary": "#2858b2",
+              "on-primary-fixed": "#410000",
+              "secondary-fixed-dim": "#bac9d3",
+              "surface-container-low": "#f3f4f5",
+              "tertiary-fixed-dim": "#b0c6ff",
+              "on-tertiary-fixed-variant": "#00429c",
+              "secondary-fixed": "#d6e5ef",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed": "#001945",
+              "on-secondary-fixed-variant": "#3b4951",
+              "background": "#f8f9fa",
+              "on-surface": "#191c1d",
+              "primary-fixed": "#ffdad4",
+              "on-secondary-container": "#56656e",
+              "inverse-primary": "#ffb4a8",
+              "on-error": "#ffffff",
+              "surface-dim": "#d9dadb",
+              "primary-container": "#eb0000",
+              "tertiary-container": "#4671cd",
+              "surface-tint": "#c00100",
+              "error-container": "#ffdad6",
+              "surface": "#f8f9fa",
+              "on-primary-fixed-variant": "#930100",
+              "outline-variant": "#ebbbb4",
+              "inverse-surface": "#2e3132",
+              "surface-bright": "#f8f9fa",
+              "on-secondary": "#ffffff",
+              "inverse-on-surface": "#f0f1f2",
+              "surface-container-highest": "#e1e3e4",
+              "secondary": "#526069",
+              "tertiary-fixed": "#d9e2ff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .pulse-ring {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: .5; transform: scale(1.2); }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body text-on-surface overflow-hidden">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-[#F8F9FA] dark:bg-slate-950/80 backdrop-blur-xl shadow-sm dark:shadow-none flex items-center justify-between px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-slate-200/50 transition-colors p-2 rounded-full scale-95 active:scale-90 duration-200">menu</button>
+<h1 class="font-manrope font-extrabold text-[#BC0100] tracking-tight text-2xl">ResQNet</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center gap-6 mr-6">
+<a class="text-[#BC0100] font-bold font-inter text-sm" href="#">Home</a>
+<a class="text-[#526069] dark:text-slate-400 font-inter text-sm hover:text-[#BC0100] transition-colors" href="#">Hospitals</a>
+<a class="text-[#526069] dark:text-slate-400 font-inter text-sm hover:text-[#BC0100] transition-colors" href="#">Contacts</a>
+</div>
+<img alt="User Profile" class="w-10 h-10 rounded-full border-2 border-surface-container-high shadow-sm" data-alt="User profile avatar showing a professional male" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwD47f4NQbKU7iQOHMZEmRIsxZ7SgPF59PUPl64PDkZDFqjovtyQ4Lo2GXiRVnVeomOQqk9znKUkMpX904pw3Hl52lz22tUzqaLVK0mtDwlduwsAGpVJWeL6GSEp78rFZTHJVQ8xfPzYUG3LpL4JoKpaPoipRvpg1DgXplCKk013XSkyLrHVs-dhrNcPGATW0Z_nuDDVB-riCdDxzWxpXcuHPlxdx9ZzskNxBeFRo03JJdsKmtjwyTQRIrxmZRUjM6iEtzcMuP4cFb"/>
+</div>
+</nav>
+<!-- Map Canvas (Main Content) -->
+<main class="relative h-screen w-full pt-20">
+<!-- Interactive Map Mockup -->
+<div class="absolute inset-0 bg-surface-container-low">
+<img alt="City Map" class="w-full h-full object-cover opacity-60 grayscale-[0.2]" data-alt="A clean top-down minimal city map showing streets" data-location="Chennai" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-O1tQdHf4ltURg6PZHrOLk_A59lXk7xVFrUV8-50dTVvRgRrkRekDIi0UpKKCY4T15LQQJLna8TLVHOA0FQN0ruWp-YK6FVa8XIKboDKhVMUtiD2PLq96he1gZo8nkizznq5LWzuLq5bWxbQw0SUJSke87s9680eU_IaUppcsopdK6_GyHkKOW6DiHGeAJwuYEN-F7Z0QTWeVIAOGhPOsoHS1nSa8NYkBycFLIkZGjFx3wPiaTxZL-L9RXc6F20C51flNoutbqkfE"/>
+<!-- Floating Overlay: Status -->
+<div class="absolute top-24 left-1/2 -translate-x-1/2 w-[90%] md:w-auto">
+<div class="bg-surface-container-lowest/90 backdrop-blur-md px-6 py-3 rounded-full shadow-lg flex items-center gap-3 border-ghost">
+<div class="w-3 h-3 bg-green-500 rounded-full pulse-ring"></div>
+<span class="font-headline font-bold text-lg text-on-surface tracking-tight">3 people nearby ready to help</span>
+</div>
+</div>
+<!-- Map Markers (Volunteers) -->
+<!-- Marker 1 -->
+<div class="absolute top-[40%] left-[30%] -translate-x-1/2 -translate-y-1/2 group cursor-pointer">
+<div class="relative">
+<div class="absolute -inset-4 bg-green-500/20 rounded-full pulse-ring"></div>
+<img class="w-12 h-12 rounded-full border-4 border-white shadow-xl relative z-10 hover:scale-110 transition-transform" data-alt="Portrait of a young female volunteer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt-ZUJ9qKMSc6setr9ES8zunUJwodZe_nxpmI4QHrtsETbZxzqunniYQU_FaW9m4j2ncuyzL71Z6TVQVVyaaZZnFe8damK0rlGYW4RWm4bVrcQ0tj7kfQMZisJUCLwT2Al6BZdzLES2kBVAHWS952z79L4U3nQfU_I2Gjsi2mM7r-QpbjCH2bAeSLL6j59Ext00U6JnBH-2v9ncmg8i8kJnZIOMGMror3sziqORu7XEtW07ld4MbyNvklhufz9R6Y23JKpguvjK4Le"/>
+<div class="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 border-2 border-white rounded-full z-20"></div>
+</div>
+</div>
+<!-- Marker 2 -->
+<div class="absolute top-[55%] left-[65%] -translate-x-1/2 -translate-y-1/2 group cursor-pointer">
+<div class="relative">
+<div class="absolute -inset-4 bg-green-500/20 rounded-full pulse-ring"></div>
+<img class="w-12 h-12 rounded-full border-4 border-white shadow-xl relative z-10 hover:scale-110 transition-transform" data-alt="Portrait of a young male volunteer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBd8QYxk28REeqw6_36nADgooSOWKWVToHymplBjc-GzZkZKD836eJXak7nCNmTZO169Y6_XEGviwlspyhUUeKNpRIEsN6VoaUJV2uR1z8VcQZELRieZ12RTEj7UwwSBB98xJ1Mr46rBgMS1NnbpgiyO9pxnW_iFlVDihDWBoPp8-ug_tGSFXTNYDhuSnhbMPeZIvFT2ziHhkihXbYtPPT1x_vESxHFcxYC1H8G6KVpAjhcPI8Ab7Wxwby90lDagJHahbRD-ZvyDFC9"/>
+<div class="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 border-2 border-white rounded-full z-20"></div>
+</div>
+</div>
+<!-- Marker 3 -->
+<div class="absolute top-[30%] left-[60%] -translate-x-1/2 -translate-y-1/2 group cursor-pointer">
+<div class="relative">
+<div class="absolute -inset-4 bg-green-500/20 rounded-full pulse-ring"></div>
+<img class="w-12 h-12 rounded-full border-4 border-white shadow-xl relative z-10 hover:scale-110 transition-transform" data-alt="Portrait of a friendly volunteer man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQQnebDg0KkMaYHV5te3M60mpVNiSW1kk5g1BIIU_LQCTSOKFnrAeqWu_6psC880OWTcblElPjeK_c901tAdFBncPpp5gxvd84kGqZ_ONz1eT9iRck3NXaAPQRwd0YF9QIiyP_xOZ-IfCmUoV_8Jy49WAqqFrfkeSlj8MhlJ77Ei3D98B9SBiXB8LI5dZeBkWXIpccI79TSwKURKIs4e9s1TK033KY-QKCnZ-4NxiVCRxJFq922_LBaIp4_i-_fRgusXKM4sj2peOT"/>
+<div class="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 border-2 border-white rounded-full z-20"></div>
+</div>
+</div>
+<!-- User Self Marker -->
+<div class="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2">
+<div class="relative">
+<div class="absolute -inset-10 bg-primary/10 rounded-full pulse-ring"></div>
+<div class="w-8 h-8 bg-primary rounded-full border-4 border-white shadow-2xl relative z-10"></div>
+</div>
+</div>
+</div>
+<!-- Floating Action Button: I'm Helping -->
+<button class="fixed bottom-32 right-6 md:right-12 z-40 bg-primary text-white flex items-center gap-3 px-8 py-4 rounded-full shadow-2xl hover:bg-primary-container transition-all scale-100 hover:scale-105 active:scale-95 group">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">volunteer_activism</span>
+<span class="font-headline font-bold">I'm helping</span>
+</button>
+<!-- Single-Action Focus Sheet (Bottom Sheet) -->
+<div class="fixed bottom-0 left-0 w-full z-40 transform translate-y-0 transition-transform duration-500">
+<div class="bg-surface-container-lowest shadow-[0px_-12px_32px_rgba(25,28,29,0.06)] rounded-t-[2.5rem] px-6 pt-4 pb-32 md:pb-12 max-w-4xl mx-auto border-ghost border-t border-surface-container">
+<!-- Handle -->
+<div class="w-12 h-1.5 bg-surface-container-highest rounded-full mx-auto mb-8"></div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
+<div>
+<h2 class="font-headline font-bold text-2xl text-on-surface">Local Responders</h2>
+<p class="font-body text-secondary text-sm mt-1">First responders within a 1km radius of your location.</p>
+</div>
+<div class="flex gap-2 overflow-x-auto pb-2 md:pb-0">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap">Medical Trained</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap">CPR Certified</span>
+</div>
+</div>
+<!-- Bento-style Volunteer Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Volunteer Card 1 -->
+<div class="bg-surface-container-low p-5 rounded-xl flex items-center gap-4 hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="relative">
+<img class="w-14 h-14 rounded-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all" data-alt="Volunteer avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAo9Z195NBdSU__cckwt4WbHZxKSJrTGNdoqEoUtqxpwLSGQ1FSpmFPjbYRavYlmeHGVhjUlraTozQIfsvZ_n7RLMMVUEWk_nOR_r1vnqMmOqR4oM77a240SbGzx5qRdE1EFjEChhzyQWtfSHyfgWatg2cGzUvbMdPZkcJPH91iJylUs9rC6HLYeJf9rqz9ONZr7LI0NhNeAj0OeEvLJgHKpEwTMmw0zS3GWOMxA51-O6oAXU_bIKIcos9j7ntk3zRzv1bdAFTIgCx"/>
+<div class="absolute bottom-0 right-0 w-4 h-4 bg-green-500 border-2 border-surface-container-low rounded-full"></div>
+</div>
+<div>
+<p class="font-headline font-bold text-on-surface">Ananya S.</p>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-primary">near_me</span>
+<p class="font-body text-primary font-semibold text-xs uppercase tracking-tighter">1 min away</p>
+</div>
+</div>
+</div>
+<!-- Volunteer Card 2 -->
+<div class="bg-surface-container-low p-5 rounded-xl flex items-center gap-4 hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="relative">
+<img class="w-14 h-14 rounded-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all" data-alt="Volunteer avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK03EqloA8ioDntaM0p9JV23v_I-ewhQkicPNL8MAFHgoHYePZH30MrChp3yuF_-zg43zKD_u3L15otVSIq5doach0s1yqo5ElpBAxNk8NnXNa15ItZ9QQEgj4LpHkZ2uP663eTtCXMG5eL3gvkwFN1Tpbrb-D2YP84VZiOPQxd5vTbd4RSxPawd6IN2HxcNBarJnVIfF0HI-obYxr24YpaCmxca1Vhhs1F3zkXIHJvYhpKPsTEHQ5awaQnD03Kn_v4q77xJAvonNF"/>
+<div class="absolute bottom-0 right-0 w-4 h-4 bg-green-500 border-2 border-surface-container-low rounded-full"></div>
+</div>
+<div>
+<p class="font-headline font-bold text-on-surface">Rahul K.</p>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-primary">near_me</span>
+<p class="font-body text-primary font-semibold text-xs uppercase tracking-tighter">3 mins away</p>
+</div>
+</div>
+</div>
+<!-- Volunteer Card 3 -->
+<div class="bg-surface-container-low p-5 rounded-xl flex items-center gap-4 hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="relative">
+<img class="w-14 h-14 rounded-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all" data-alt="Volunteer avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBm5AYsNAKys2AnsrJOIQk9zxFw6fgs-nzciMkiQplOqwup_s1K0dKsp2_zKPuzOTMPnUQIsBsQhq0SPPAAMoMu5N1R3N1Z6iE8FkVV_Kt4-WrzxQEJEQ1CB37YBC7B8vi3bWyc0p4UTLa-4sDbTwqg4nuPhN0Ql-olb7uJV0r31qw_Y0dO6yEDAxWNVZsZ7vPokp6YpnJq4agP7QLQPH_vLnAlZEQzD_VrEkJ_UUtNgp8OKVVWWGW6FspD7ADM_4Q-F9wlVwspwLrf"/>
+<div class="absolute bottom-0 right-0 w-4 h-4 bg-green-500 border-2 border-surface-container-low rounded-full"></div>
+</div>
+<div>
+<p class="font-headline font-bold text-on-surface">Vignesh M.</p>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-primary">near_me</span>
+<p class="font-body text-primary font-semibold text-xs uppercase tracking-tighter">5 mins away</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Mobile Only via md:hidden logic in rules) -->
+<div class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-end pb-6 px-4 bg-[#F8F9FA]/90 dark:bg-slate-950/90 backdrop-blur-2xl rounded-t-[2rem] z-50 shadow-[0px_-12px_32px_rgba(25,28,29,0.06)]">
+<a class="flex flex-col items-center justify-center text-[#526069] dark:text-slate-400 p-2 hover:text-[#BC0100] transition-transform duration-300 ease-out scale-105" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-wider mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#EB0000] text-white rounded-full p-3 mb-2 scale-110 shadow-lg shadow-red-500/20 transition-transform duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_hospital</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-wider mt-1">Hospitals</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#526069] dark:text-slate-400 p-2 hover:text-[#BC0100] transition-transform duration-300 ease-out scale-105" href="#">
+<span class="material-symbols-outlined">contact_phone</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-wider mt-1">Contacts</span>
+</a>
+</div>
+</body></html>

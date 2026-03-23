@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/eswr0/Desktop/**)",
+      "Read(//c/Users/eswr0/Desktop/build/**)"
+    ]
+  }
+}

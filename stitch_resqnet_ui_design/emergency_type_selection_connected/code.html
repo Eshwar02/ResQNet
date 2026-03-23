@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Emergency Type Selection - Uyirnaadi</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-high": "#e7e8e9",
+                        "on-surface-variant": "#603e39",
+                        "primary": "#bc0100",
+                        "surface-container": "#edeeef",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#0f1d25",
+                        "surface-variant": "#e1e3e4",
+                        "on-primary-container": "#fffbff",
+                        "primary-fixed-dim": "#ffb4a8",
+                        "on-tertiary-container": "#fefcff",
+                        "secondary-container": "#d3e2ed",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-background": "#191c1d",
+                        "error": "#ba1a1a",
+                        "outline": "#956d67",
+                        "tertiary": "#2858b2",
+                        "on-primary-fixed": "#410000",
+                        "secondary-fixed-dim": "#bac9d3",
+                        "surface-container-low": "#f3f4f5",
+                        "tertiary-fixed-dim": "#b0c6ff",
+                        "on-tertiary-fixed-variant": "#00429c",
+                        "secondary-fixed": "#d6e5ef",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#001945",
+                        "on-secondary-fixed-variant": "#3b4951",
+                        "background": "#f8f9fa",
+                        "on-surface": "#191c1d",
+                        "primary-fixed": "#ffdad4",
+                        "on-secondary-container": "#56656e",
+                        "inverse-primary": "#ffb4a8",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#d9dadb",
+                        "primary-container": "#eb0000",
+                        "tertiary-container": "#4671cd",
+                        "surface-tint": "#c00100",
+                        "error-container": "#ffdad6",
+                        "surface": "#f8f9fa",
+                        "on-primary-fixed-variant": "#930100",
+                        "outline-variant": "#ebbbb4",
+                        "inverse-surface": "#2e3132",
+                        "surface-bright": "#f8f9fa",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-container-highest": "#e1e3e4",
+                        "secondary": "#526069",
+                        "tertiary-fixed": "#d9e2ff"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+        }
+        .pulse-glow {
+            box-shadow: 0 0 20px 5px rgba(188, 1, 0, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface antialiased min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#F8F9FA] dark:bg-slate-950/80 backdrop-blur-xl shadow-sm dark:shadow-none flex items-center justify-between px-6 py-4">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors scale-95 active:scale-90 duration-200" onclick="window.location.href='{{DATA:SCREEN:SCREEN_9}}'">
+<span class="material-symbols-outlined text-on-surface">arrow_back</span>
+</button>
+<h1 class="font-headline font-extrabold text-[#BC0100] tracking-tight text-2xl">Uyirnaadi</h1>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border border-outline-variant">
+<img alt="User profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBE1mFLsoE5gMGw6f8mN2O3ZsnaAP6wAa8tdmjN-whb3WRHmMdlm2k-2ZrRJxoP1jrjpMUfMrXZ_RuoVoyPzDWhRk4lrh72wxKCzx4D9gaiFfvMjsfaDbSn0wJAQ27QHRaFfv8TApoz2PFTCuOWTNwjTulc3h-4y4egj7G4c8pbwaur_AEbNE_krNphSuU26MqK9FqE8teT-P6s2FqaOJ_qVMQIrEpJJg-QcsSwh1d23r24mR2livqQ93nxgjqpSspbHlcx0Ll0nNbW"/>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-lg mx-auto min-h-screen">
+<!-- Editorial Header -->
+<div class="mb-10 text-center">
+<span class="inline-block px-4 py-1.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label text-xs font-bold uppercase tracking-widest mb-4">
+                Immediate Response
+            </span>
+<h2 class="font-headline font-extrabold text-4xl text-on-surface tracking-tight mb-2 leading-tight">
+                Identify <br/>the <span class="text-primary">Emergency</span>
+</h2>
+<p class="font-body text-secondary text-base max-w-[280px] mx-auto">
+                Select the category that best matches your current situation.
+            </p>
+</div>
+<!-- Emergency Grid -->
+<div class="grid grid-cols-2 gap-5">
+<!-- Road Accident Card (Active/Glow) -->
+<button class="relative group flex flex-col items-center justify-center aspect-square bg-surface-container-lowest rounded-[2rem] p-6 text-center shadow-[0px_12px_32px_rgba(25,28,29,0.06)] border-2 border-primary pulse-glow scale-100 active:scale-95 transition-all duration-300" onclick="window.location.href='{{DATA:SCREEN:SCREEN_11}}'">
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-on-primary text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-tighter whitespace-nowrap">
+                    Highest Priority
+                </div>
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1;">directions_car</span>
+</div>
+<span class="font-headline font-bold text-on-surface text-lg">Road Accident</span>
+</button>
+<!-- Fire/Burn Card -->
+<button class="group flex flex-col items-center justify-center aspect-square bg-surface-container-lowest rounded-[2rem] p-6 text-center shadow-[0px_12px_32px_rgba(25,28,29,0.06)] hover:bg-surface-container-low scale-100 active:scale-95 transition-all duration-300" onclick="window.location.href='{{DATA:SCREEN:SCREEN_11}}'">
+<div class="w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-orange-600 text-4xl">local_fire_department</span>
+</div>
+<span class="font-headline font-bold text-on-surface text-lg">Fire/Burn</span>
+</button>
+<!-- Cardiac Card -->
+<button class="group flex flex-col items-center justify-center aspect-square bg-surface-container-lowest rounded-[2rem] p-6 text-center shadow-[0px_12px_32px_rgba(25,28,29,0.06)] hover:bg-surface-container-low scale-100 active:scale-95 transition-all duration-300" onclick="window.location.href='{{DATA:SCREEN:SCREEN_11}}'">
+<div class="w-16 h-16 rounded-full bg-red-50 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<span class="font-headline font-bold text-on-surface text-lg">Cardiac</span>
+</button>
+<!-- General Card -->
+<button class="group flex flex-col items-center justify-center aspect-square bg-surface-container-lowest rounded-[2rem] p-6 text-center shadow-[0px_12px_32px_rgba(25,28,29,0.06)] hover:bg-surface-container-low scale-100 active:scale-95 transition-all duration-300" onclick="window.location.href='{{DATA:SCREEN:SCREEN_11}}'">
+<div class="w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-tertiary text-4xl">medical_services</span>
+</div>
+<span class="font-headline font-bold text-on-surface text-lg">General</span>
+</button>
+</div>
+<!-- Instructional Tip -->
+<div class="mt-12 p-6 bg-surface-container-low rounded-3xl flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-tertiary/10 flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary text-xl">lightbulb</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface text-sm">Quick Tip</h4>
+<p class="font-body text-secondary text-xs mt-1 leading-relaxed">
+                    Selecting the right category allows our dispatchers to send specialized medical personnel and equipment to your location immediately.
+                </p>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-end pb-6 px-4 bg-[#F8F9FA]/90 dark:bg-slate-950/90 backdrop-blur-2xl rounded-t-[2rem] z-50 shadow-[0px_-12px_32px_rgba(25,28,29,0.06)]">
+<button class="flex flex-col items-center justify-center text-[#526069] dark:text-slate-400 p-2 hover:text-[#BC0100] transition-transform duration-300 ease-out" onclick="window.location.href='{{DATA:SCREEN:SCREEN_9}}'">
+<span class="material-symbols-outlined">home</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-wider mt-1">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-[#EB0000] text-white rounded-full p-3 mb-2 scale-110 shadow-lg shadow-red-500/20 transition-transform duration-300 ease-out">
+<span class="material-symbols-outlined">local_hospital</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-wider mt-1">Hospitals</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#526069] dark:text-slate-400 p-2 hover:text-[#BC0100] transition-transform duration-300 ease-out">
+<span class="material-symbols-outlined">contact_phone</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-wider mt-1">Contacts</span>
+</button>
+</nav>
+</body></html>
